@@ -17,14 +17,18 @@ _.server_configurations = {
     end
   },
   { "lua_ls" },
-  { "ruff" },
   { "ts_ls" },
   { "clangd" },
+  { "ruff" },
   {
     "basedpyright",
     opts = {
-      analysis = {
-        typeCheckingMode = "basic",
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = "basic",
+          },
+        }
       }
     }
   },
@@ -83,15 +87,14 @@ _.register_servers = function()
       end
     end
 
-    if config_opts ~= nil then
-      vim.lsp.config(config_name, config_opts)
-    end
-    
     -- "*" is a special case
     if config_name ~= "*" then
       vim.lsp.enable(config_name)
     end
-  
+
+    if config_opts ~= nil then
+      vim.lsp.config(config_name, config_opts)
+    end
   end
 end
 
