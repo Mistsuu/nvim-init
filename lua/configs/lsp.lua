@@ -79,7 +79,7 @@ _.register_servers = function()
     if type(config_opts) == "function" then
       config_opts = config_opts()
       if type(config_opts) ~= "table" then
-        error("configs.lsp.server_configurations[" .. tostring(i) .. "].opts() must be a table or nil")
+        error("configs.lsp.server_configurations[" .. tostring(i) .. "].opts() must be a table")
       end
     end
 
