@@ -1,22 +1,25 @@
 local mapkey = vim.keymap.set
 
 -- Telescope keymaps
-local telescope_builtin = require('telescope.builtin')
-mapkey('n', '<C-g>', telescope_builtin.find_files, { desc = 'Telescope find files' })
-mapkey('n', '<C-f>', telescope_builtin.live_grep, { desc = 'Telescope live grep' })
+local telescope_builtin = require("telescope.builtin")
+mapkey("n", "<C-g>", telescope_builtin.find_files, { desc = "Telescope find files" })
+mapkey("n", "<C-f>", telescope_builtin.live_grep, { desc = "Telescope live grep" })
 
 -- Neotree keymaps
-mapkey('n', '<C-b>', '<cmd>Neotree toggle<CR><C-w>w')
+mapkey("n", "<C-b>", "<cmd>Neotree toggle<CR><C-w>w")
+
+-- Exit keyword, save session before quit
+mapkey("n", "<leader>q", "<cmd>Autosession save<CR><cmd>qa<CR>")
 
 -- Switch between multiple splits
-mapkey('n', '<C-h>', '<cmd>wincmd h<CR>')
-mapkey('n', '<C-j>', '<cmd>wincmd j<CR>')
-mapkey('n', '<C-k>', '<cmd>wincmd k<CR>')
-mapkey('n', '<C-l>', '<cmd>wincmd l<CR>')
+mapkey("n", "<C-h>", "<cmd>wincmd h<CR>")
+mapkey("n", "<C-j>", "<cmd>wincmd j<CR>")
+mapkey("n", "<C-k>", "<cmd>wincmd k<CR>")
+mapkey("n", "<C-l>", "<cmd>wincmd l<CR>")
 
 -- Splits screen
-mapkey('n', '<leader>\\', '<cmd>vsplit<CR>')
-mapkey('n', '<leader>=', '<cmd>split<CR>')
+mapkey("n", "<leader>\\", "<cmd>vsplit<CR>")
+mapkey("n", "<leader>=", "<cmd>split<CR>")
 
 -- Language Server
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -40,4 +43,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     mapkey("n", "<leader>ca", vim.lsp.buf.code_action, lsp_opts "Open code action")
   end
 })
+
+-- Docstring
+mapkey("n", "<leader>\"", "<cmd>Neogen<CR>")
 

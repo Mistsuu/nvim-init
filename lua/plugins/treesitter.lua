@@ -1,13 +1,13 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = 'master',
-  event = { 
+  event = {
     "BufReadPost",
     "BufNewFile"
   },
   lazy = true,
   build = ":TSUpdate",
-  cmd = { 
+  cmd = {
     "TSInstall",
     "TSBufEnable",
     "TSBufDisable",
@@ -16,7 +16,7 @@ return {
   main = "nvim-treesitter.configs",
   opts = {
     ensure_installed = {
-      "c", 
+      "c",
       "cpp",
       "lua",
       "rust",

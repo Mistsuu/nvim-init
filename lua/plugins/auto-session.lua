@@ -1,11 +1,26 @@
 return {
   "rmagatti/auto-session",
   lazy = false,
-  opts = {
-    suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-    enabled = true,
-    auto_save = true,
-    auto_restore = true,
-    -- log_level = 'debug',
-  },
+  config = function ()
+    -- vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+    require("auto-session").setup({
+      suppressed_dirs = {
+        "~/",
+        "~/Downloads",
+        "/"
+      },
+      bypass_save_filetypes = {
+        "neo-tree"
+      },
+      close_filetypes_on_save = {
+        "neo-tree",
+        "checkhealth"
+      },
+      -- enabled = false,
+      -- auto_save = false,
+      -- auto_restore = false,
+      -- auto_create = false,
+    })
+  end
 }
+

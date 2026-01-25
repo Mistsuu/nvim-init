@@ -10,6 +10,22 @@ return {
     }
   },
   {
+    "danymat/neogen",
+    version = "*",
+    config = function ()
+      require("neogen").setup({
+        snippet_engine = "luasnip",
+        languages = {
+          python = {
+            template = {
+              annotation_convention = "google_docstrings"
+            }
+          }
+        }
+      })
+    end
+  },
+  {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
@@ -23,19 +39,22 @@ return {
         },
 
         window = {
-          -- completion = cmp.config.window.bordered(),
-          -- documentation = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
         },
 
-        mapping = cmp.mapping.preset.insert({
-          ['<C-a>'] = cmp.mapping.select_prev_item(),
-          ['<C-d>'] = cmp.mapping.select_next_item(),
-          ['<C-w>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-s>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        }),
+        mapping = (
+          cmp.mapping.preset
+            .insert({
+              ['<C-a>'] = cmp.mapping.select_prev_item(),
+              ['<C-d>'] = cmp.mapping.select_next_item(),
+              ['<C-w>'] = cmp.mapping.scroll_docs(-4),
+              ['<C-s>'] = cmp.mapping.scroll_docs(4),
+              ['<C-Space>'] = cmp.mapping.complete(),
+              ['<C-e>'] = cmp.mapping.abort(),
+              ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            })
+        ),
 
         sources = cmp.config.sources(
           {
@@ -50,3 +69,4 @@ return {
     end
   },
 }
+

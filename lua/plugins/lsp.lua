@@ -3,7 +3,6 @@ return {
     "mason-org/mason.nvim",
     opts = {},
   },
-
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
@@ -14,7 +13,6 @@ return {
       "neovim/nvim-lspconfig"
     }
   },
-
   {
     "neovim/nvim-lspconfig",
     config = require("configs.lsp").register_servers
