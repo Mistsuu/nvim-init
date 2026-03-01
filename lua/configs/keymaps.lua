@@ -47,3 +47,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Docstring
 mapkey("n", "<leader>\"", "<cmd>Neogen<CR>")
 
+-- Easy align
+mapkey("n", "ga", "<Plug>(EasyAlign)")
+mapkey("x", "ga", "<Plug>(EasyAlign)")
+
