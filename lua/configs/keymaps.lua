@@ -1,5 +1,8 @@
 local mapkey = vim.keymap.set
 
+-- Replace yanked text under cursor
+mapkey("n", "<leader>sr", ":%s/<C-R><C-W>//g<Left><Left>")
+
 -- Telescope keymaps
 local telescope_builtin = require("telescope.builtin")
 mapkey("n", "<C-g>", telescope_builtin.find_files, { desc = "Telescope find files" })
