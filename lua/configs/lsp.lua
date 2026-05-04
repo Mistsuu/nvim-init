@@ -27,8 +27,11 @@ _.server_configurations = {
         basedpyright = {
           analysis = {
             typeCheckingMode = "basic",
+            extraPaths = {
+              "/usr/lib/python3.14/site-packages"
+            },
           },
-        }
+        },
       }
     }
   },

@@ -14,3 +14,25 @@ vim.cmd("set rnu")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Copy to clipboard
+-- (note: in Linux, xclip must be installed)
+vim.opt.clipboard:append { 'unnamedplus' }
+
+-- Kitty margin management
+if vim.env.KITTY_WINDOW_ID then
+  vim.api.nvim_create_autocmd("UIEnter", {
+    callback = function()
+      vim.fn.system("kitty @ set-spacing padding=0")
+    end,
+  })
+
+  vim.api.nvim_create_autocmd("UILeave", {
+    callback = function()
+      vim.fn.system("kitty @ set-spacing padding=15")
+    end,
+  })
+end
+
+-- Set coloring
+vim.opt.termguicolors = true
+

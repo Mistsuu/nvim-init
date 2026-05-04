@@ -2,6 +2,10 @@ local mapkey = vim.keymap.set
 
 -- Replace yanked text under cursor
 mapkey("n", "<leader>sr", ":%s/<C-R><C-W>//g<Left><Left>")
+mapkey("v", "<C-r>", function ()
+  vim.api.nvim_input "y"
+  vim.api.nvim_input ":%s/<C-R><C-W>//g<Left><Left>"
+end)
 
 -- Telescope keymaps
 local telescope_builtin = require("telescope.builtin")
