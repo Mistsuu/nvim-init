@@ -15,7 +15,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Copy to clipboard
--- (note: in Linux, xclip must be installed)
 vim.opt.clipboard:append { 'unnamedplus' }
 
 -- Kitty margin management
