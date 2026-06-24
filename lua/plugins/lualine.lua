@@ -43,20 +43,20 @@ end
 
 -- plugin
 return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
+  "nvim-lualine/lualine.nvim",
+  dependencies = {
     "nvim-tree/nvim-web-devicons",
     "folke/noice.nvim",
     "catppuccin/nvim",
   },
-	event = { "VeryLazy" },
+  event = { "VeryLazy" },
 
-	config = function(_, _)
+  config = function(_, _)
     local noice = require("noice")
     local flavour = require("catppuccin").flavour
     local colors = require("catppuccin.palettes").get_palette(flavour)
 
-		require("lualine").setup({
+    require("lualine").setup({
       options = {
         theme = get_catppuccin_theme(colors),
         component_separators = { left = '', right = ''},
@@ -102,7 +102,7 @@ return {
       },
     })
 
-		vim.opt.laststatus = 3
-	end,
+    vim.opt.laststatus = 3
+  end,
 }
 
