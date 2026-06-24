@@ -76,17 +76,10 @@ return {
 		},
 	},
 	config = function(_, opts)
-		local map = vim.keymap.set
 		if vim.o.filetype == "lazy" then
 			vim.cmd([[messages clear]])
 		end
 		require("noice").setup(opts)
-		-- keymaps
-		map("n", "<leader>nh", ":Noice history<cr>", { desc = "History", noremap = true, silent = true })
-		map("n", "<leader>nl", ":Noice last<cr>", { desc = "Last Msg", noremap = true, silent = true })
-		map("n", "<leader>na", ":Noice all<cr>", { desc = "All Msg", noremap = true, silent = true })
-		map("n", "<leader>nd", ":Noice dismiss<cr>", { desc = "Dismiss", noremap = true, silent = true })
-		map("n", "<leader>np", ":Noice pick<cr>", { desc = "Pick", noremap = true, silent = true })
 	end,
 }
 

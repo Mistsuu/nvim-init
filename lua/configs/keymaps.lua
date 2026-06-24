@@ -58,3 +58,10 @@ mapkey("n", "<leader>\"", "<cmd>Neogen<CR>")
 mapkey("n", "ga", "<Plug>(EasyAlign)")
 mapkey("x", "ga", "<Plug>(EasyAlign)")
 
+-- Noice
+mapkey("n", "<leader>nh", ":Noice history<cr>", { desc = "History", noremap = true, silent = true })
+mapkey("n", "<leader>nl", ":Noice last<cr>", { desc = "Last Msg", noremap = true, silent = true })
+mapkey("n", "<leader>na", ":Noice all<cr>", { desc = "All Msg", noremap = true, silent = true })
+mapkey("n", "<leader>nd", ":Noice dismiss<cr>", { desc = "Dismiss", noremap = true, silent = true })
+mapkey("n", "<leader>np", ":Noice pick<cr>", { desc = "Pick", noremap = true, silent = true })
+
