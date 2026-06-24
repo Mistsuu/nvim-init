@@ -13,9 +13,6 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   dependencies = {
     "HiPhish/rainbow-delimiters.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter"
-    }
   },
   config = function ()
     local hooks = require("ibl.hooks")
