@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     mapkey("n", "H", vim.lsp.buf.hover, lsp_opts "Displays infomation")
+    mapkey("n", "gr", vim.lsp.buf.references, lsp_opts "Go to references")
     mapkey("n", "gD", vim.lsp.buf.declaration, lsp_opts "Go to declaration")
     mapkey("n", "gd", vim.lsp.buf.definition, lsp_opts "Go to definition")
     mapkey("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, lsp_opts "Add workspace folder")
