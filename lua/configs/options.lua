@@ -38,3 +38,6 @@ vim.opt.termguicolors = true
 -- Session options
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- All floating windows are rounded
+vim.o.winborder = 'rounded'
+
