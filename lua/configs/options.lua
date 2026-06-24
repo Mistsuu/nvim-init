@@ -35,3 +35,6 @@ end
 -- Set coloring
 vim.opt.termguicolors = true
 
+-- Session options
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
