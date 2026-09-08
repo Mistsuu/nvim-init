@@ -18,19 +18,24 @@ vim.g.maplocalleader = "\\"
 vim.opt.clipboard:append { 'unnamedplus' }
 
 -- Kitty margin management
-if vim.env.KITTY_WINDOW_ID then
-  vim.api.nvim_create_autocmd("UIEnter", {
-    callback = function()
-      vim.fn.system("kitty @ set-spacing padding=0")
-    end,
-  })
-
-  vim.api.nvim_create_autocmd("UILeave", {
-    callback = function()
-      vim.fn.system("kitty @ set-spacing padding=15")
-    end,
-  })
-end
+--
+-- *Ew, who thinks that the way 
+-- allow_remote_control yes was implemented
+-- was a good idea?*
+--
+-- if vim.env.KITTY_WINDOW_ID then
+--   vim.api.nvim_create_autocmd("UIEnter", {
+--     callback = function()
+--       vim.fn.system("kitty @ set-spacing padding=0")
+--     end,
+--   })
+--
+--   vim.api.nvim_create_autocmd("UILeave", {
+--     callback = function()
+--       vim.fn.system("kitty @ set-spacing padding=15")
+--     end,
+--   })
+-- end
 
 -- Set coloring
 vim.opt.termguicolors = true
