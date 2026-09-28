@@ -66,3 +66,9 @@ mapkey("n", "<leader>na", ":Noice all<cr>", { desc = "All Msg", noremap = true, 
 mapkey("n", "<leader>nd", ":Noice dismiss<cr>", { desc = "Dismiss", noremap = true, silent = true })
 mapkey("n", "<leader>np", ":Noice pick<cr>", { desc = "Pick", noremap = true, silent = true })
 
+-- Viewing codetree
+mapkey("n", "<leader>cs", "<cmd>AerialToggle right<cr>")
+
+-- Formatting
+mapkey("n", "<leader>fmt", "<cmd>lua require(\"conform\").format()<cr>")
+
