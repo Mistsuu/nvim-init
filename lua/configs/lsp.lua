@@ -35,6 +35,12 @@ _.server_configurations = {
       }
     }
   },
+  {
+    "qmlls",
+    opts = {
+      cmd = { "qmlls6", "-E" }
+    }
+  }
 }
 
 -- more configurations here
