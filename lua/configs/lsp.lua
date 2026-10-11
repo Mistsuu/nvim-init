@@ -20,6 +20,9 @@ _.server_configurations = {
   { "ts_ls" },
   { "clangd" },
   { "ruff" },
+  { "cssls" },
+  { "qmlls" },
+  { "html" },
   {
     "basedpyright",
     opts = {
