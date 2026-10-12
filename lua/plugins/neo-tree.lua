@@ -6,14 +6,18 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons",
   },
-  lazy = false,
-  config = function ()
-    require("neo-tree").setup({
-      close_if_last_window = true,
-      source_selector = {
-        separator = { left = "▏", right= "▕" },
+  opts = {
+    close_if_last_window = true,
+    source_selector = {
+      separator = { left = "▏", right= "▕" },
+    },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = false,
       },
-    })
-  end
+    },
+  },
+  lazy = false,
 }
 
