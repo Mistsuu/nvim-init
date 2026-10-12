@@ -24,6 +24,12 @@ return {
             "--smart-case",
             "--no-ignore", -- added this, the rest above are defaults
           },
+          file_ignore_patterns = {
+            "node_modules/.*",  -- Ignore everything inside node_modules
+            "%.git/.*",         -- Ignore git directory (escape the dot with %)
+            "build/.*",         -- Ignore a specific build folder
+            "vendor/.*",        -- Ignore vendor folders
+          },
         },
         extensions = {
           ["ui-select"] = {
